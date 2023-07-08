@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        body{
+            top: 100px;
+            position: relative;
+            justify-content: center;
+            background-color: rgb(99, 99, 196);
+            align-items: center;
+            display: flex;
+            
+        }
+        
+       
+        .calculator{
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 400px;
+            border: 1px solid black;
+            background-color: bisque; 
+
+        }
+        input{
+            text-align: center;
+            top: 10px;
+            position: absolute;
+            width: 290px;
+            height: 30px;
+        }
+
+        .numberBox{
+        
+            
+            width: 250px;
+            height: 350px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: ;
+
+        }
+        .number{
+            margin: 3px;
+            border: 1px solid rgb(255, 255, 255);
+            width: 60px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background-color: black;
+            cursor: pointer;
+
+          
+        
+        }
+        .box{
+            
+
+        }
+    </style>
+</head>
+<body>
+
+    
+    <h1 style="position: absolute; bottom: 10px; color: rgb(4, 11, 11);">calculadora</h1>
+    
+
+<div class="calculator">
+   
+    <input type="text" name="visor" id="visor">
+    <div class="numberBox">
+        <div class="box">
+            <div class="number" onclick="addNumber('7')">7</div>
+            <div class="number" onclick="addNumber('4')">4</div>
+            <div class="number" onclick="addNumber('1')">1</div>
+            <div class="number" onclick="addNumber('+')">+</div>
+        </div>
+        
+        <div class="box">
+            <div class="number" onclick="addNumber('8')">8</div>
+            <div class="number" onclick="addNumber('5')">5</div>
+            <div class="number" onclick="addNumber('2')">2</div>
+            <div class="number" onclick="addNumber('-')">-</div>
+        </div>
+
+        <div class="box">
+            <div class="number" onclick="addNumber('9')">9</div>
+            <div class="number" onclick="addNumber('6')">6</div>
+            <div class="number" onclick="addNumber('3')">3</div>
+            <div class="number" onclick="addNumber('*')">*</div>
+
+        </div>
+
+        <div class="box">
+            <div class="number"onclick="clearNumber()">C</div>
+            <div class="number" onclick="addNumber('/')">/</div>
+            <div class="number" onclick="Calculator()">=</div>
+        </div>
+       
+
+        
+
+       
+    </div>
+</div>
+
+<script>
+    function addNumber(valor){
+        let tela = document.getElementById("visor")
+       
+        tela.value += valor
+
+
+    }
+
+    
+    function Calculator (){
+        try{
+            visor.value = eval(visor.value)
+        } catch (error){
+            visor.value = 'erro'
+        }
+    }
+
+    function clearNumber(){
+        let tela = document.getElementById("visor")
+        tela.value =""
+    }
+</script>
+    
+</body>
+</html>
